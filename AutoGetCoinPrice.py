@@ -22,9 +22,11 @@ for tag in soup.find_all('a', attrs={"class": "currency-name-container"})[0:99]:
 
 ####### END GET TOP 100 coins
 
+first_day = '20161223'
+last_day =  '20171223'
 for coin, coin_url in coins_url.items():
     print(coin)
-    full_url = 'https://coinmarketcap.com' + coin_url + 'historical-data/?start=20161223&end=20171223'
+    full_url = 'https://coinmarketcap.com' + coin_url + 'historical-data/?start='+first_day+'&end='+ last_day
     page = urllib.request.urlopen(full_url)
     mybytes = page.read()
     coin_HTML = mybytes.decode("utf8")
