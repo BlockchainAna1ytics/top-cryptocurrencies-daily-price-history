@@ -17,7 +17,7 @@ page.close()
 soup = BeautifulSoup(HTML, 'html.parser')
 
 coins_url = dict()
-for tag in soup.find_all('a', attrs={"class": "currency-name-container"})[0:99]:
+for tag in soup.find_all('a', attrs={"class": "currency-name-container"})[0:100]:
     coins_url.update({tag.text:tag['href']})
 
 ####### END GET TOP 100 coins
